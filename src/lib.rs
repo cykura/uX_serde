@@ -1,6 +1,6 @@
-//! # uX - non-standard-width integers types
+//! # uX_serde - non-standard-width integers types
 //!
-//! When non-standard-width integers is required in an applications, the norm is to use a larger container and make sure the value is within range after manipulation. uX aims to take care of this once and for all by:
+//! When non-standard-width integers is required in an applications, the norm is to use a larger container and make sure the value is within range after manipulation. uX_serde aims to take care of this once and for all by:
 //!
 //! - Providing `u1`-`u127` and `i1`-`i127` types that should behave as similar as possible to the built in rust types
 //!     - The methods of the defined types are the same as for the built in types (far from all is implemented at this point but fill out an issue or create a PR if something essential for you is missing)
@@ -132,7 +132,7 @@ macro_rules! implement_common {
             /// Basic usage:
             ///
             /// ```
-            /// use ux::*;
+            /// use ux_serde::*;
             ///
             /// assert_eq!(u31::new(64), u31::from(64u8));
             ///
@@ -154,7 +154,7 @@ macro_rules! implement_common {
             /// Basic usage:
             ///
             /// ```
-            /// use ux::*;
+            /// use ux_serde::*;
             ///
             /// assert_eq!(i5::MIN.wrapping_sub(i5::new(1)), i5::MAX);
             ///
@@ -173,7 +173,7 @@ macro_rules! implement_common {
             /// Basic usage:
             ///
             /// ```
-            /// use ux::*;
+            /// use ux_serde::*;
             ///
             /// assert_eq!(i5::MAX.wrapping_add(i5::new(1)), i5::MIN);
             ///
